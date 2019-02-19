@@ -9,7 +9,7 @@
 <!-- Custom CSS goes below Bootstrap CSS -->
 <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
 <link rel="stylesheet" href="/style.css" />
-<title>Insert title here</title>
+<title>Java Bean Cafe</title>
 </head>
 
 <body>
@@ -18,31 +18,31 @@
 
 	<form action="/javaBean-addUser" method="post">
 		<p>
-			<label for="firstName">First Name:</label> <input type="text"
-				id="firstName" name="firstName" />
+			<label for="firstName">First Name:</label> 
+			<input type="text" id="firstName" name="firstName" />
 		</p>
 		<p>
-			<label for="lastName">Last Name:</label> <input type="text"
-				name="lastName" id="lastname" name="lastname" />
+			<label for="lastName">Last Name:</label> 
+			<input type="text" name="lastName" id="lastname" name="lastname" />
 		</p>
 		<p>
-			<label for="email">Email:</label> <input type="email" name="lastname"
-				id="lastname" name="lastname" />
+			<label for="email">Email:</label> 
+			<input type="email" name="lastname" id="lastname" name="lastname" />
 		</p>
 
 		<p>
-			<label for="password">Password:</label> <input type="password"
-				name="password" id="password" name="password" />
+			<label for="password">Password:</label> 
+			<input type="password" name="password" id="password" name="password" />
 		</p>
 		<fieldset>
 			<legend>Java Profile</legend>
-			Java Type <input type="radio" name="roast" value="Light"
+			Java Type <input type="radio" name="javaTaste" value="Light"
 				value="Medium" value="Hard">Light<br> <input
-				type="radio" name="roast" value="Medium" value="Hard">
-			Medium<br> <input type="radio" name="roast" value="Hard">
+				type="radio" name="javaTaste" value="Medium" value="Hard">
+			Medium<br> <input type="radio" name="javaTaste" value="Hard">
 			Hard <br> Did you bring your own cup? <br> <input
-				type="radio" name="HellYEAH" value="SorryNotSorry"> HellYEAH<br> <input type="radio" name="My Own"
-				value="Kill Environment"> SorryNotSorry<br>
+				type="radio" name="cup" value="HellYeah"> HellYEAH<br> <input type="radio" name="cup"
+				value="SorryNotSorry"> SorryNotSorry<br>
 		</fieldset>
 
 

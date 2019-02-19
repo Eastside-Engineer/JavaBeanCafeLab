@@ -12,6 +12,9 @@
 <link rel="stylesheet" href="/style.css" />
 
 </head>
-<body>Hello, ${ customer.firstName }
+<body>
+<p>Hello, ${ customer.firstName }</p>
+<p>You like your java beans with a ${ customer.javaTaste } roast! </p>
+<p>Helping the environment? ${ customer.cup }</p>
 </body>
 </html>
