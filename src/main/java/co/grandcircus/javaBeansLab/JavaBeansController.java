@@ -23,16 +23,16 @@ public class JavaBeansController {
 		return mav;
 	}
 
-	@RequestMapping("/javaBean-addUser")
+	@PostMapping("/javaBean-addUser")
 	public ModelAndView showResult(Customer customer) {
 		ModelAndView mav = new ModelAndView("javaBean-addUser");
 
 		return mav;
 	}
-	@PostMapping
-	public ModelAndView showSecure(Customer customer) {
-		ModelAndView mav = new ModelAndView("javaBean-addUser");
-
-		return mav;
-	}
+//	@PostMapping
+//	public ModelAndView showSecure(Customer customer) {
+//		ModelAndView mav = new ModelAndView("javaBean-addUser");
+//
+//		return mav;
+//	}
 }
