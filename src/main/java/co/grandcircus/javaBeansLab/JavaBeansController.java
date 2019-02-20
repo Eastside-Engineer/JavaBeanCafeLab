@@ -1,21 +1,39 @@
 package co.grandcircus.javaBeansLab;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
 public class JavaBeansController {
+	
+	@Autowired
+	private CustomerDao customerDao;
 
+	@Autowired
+	private ItemsDao itemsDao;
+	
 	@RequestMapping("/")
 	public ModelAndView showIndex() {
 		ModelAndView mav = new ModelAndView("javaBean-index");
 		return mav;
 	}
+	@PostMapping("/")
+	public ModelAndView list() {
+		List<Customer> leListOfCustomers = customerDao.findAll();
+		return new ModelAndView("list", "customers", leListOfCustomers);
+	}
+	@PostMapping("/")
+	public ModelAndView list1() {
+		List<items> leListOfItems = itemsDao.findAll();
+		return new ModelAndView("list", "customers", leListOfItems);
+	}
+	
 	@RequestMapping("/javaBean-register")
 	public ModelAndView showForm() {
 		
@@ -29,10 +47,12 @@ public class JavaBeansController {
 
 		return mav;
 	}
+}
+
 //	@PostMapping
 //	public ModelAndView showSecure(Customer customer) {
 //		ModelAndView mav = new ModelAndView("javaBean-addUser");
 //
 //		return mav;
 //	}
-}
+

@@ -1,7 +1,7 @@
 package co.grandcircus.javaBeansLab;
 
-import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.stereotype.Component;
+@Component
 public class Customer {
 
 	// A simple class with getters and setters can be referred to as
