@@ -16,6 +16,12 @@
 <body>
 	<h1>Welcome to Java Bean Cafe!</h1>
 	<h4>Register here to get EXCLUSIVE deals!.</h4>
+	<c:forEach var="anything" items="${ items }">
+	<p>
+	${ anything }
+	${ anything.name }
+	</p>
+	</c:forEach>
 
 
 	<form action="/javaBean-register">

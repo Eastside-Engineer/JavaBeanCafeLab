@@ -19,31 +19,31 @@ public class ItemsDao {
 	
 	// Spring will automatically inject this dependency thanks to @Autowired
 	@Autowired
-	private JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbc;
 
-	public List<items> findAll() {
+	public List<Item> findAll() {
 		// BeanPropertyRowMapper uses the rows from the SQL result create
 		// new Room objects and fill in the values by calling the setters.
 		// Use .query for SQL SELECT statements.
-		return jdbcTemplate.query("SELECT * FROM items", new BeanPropertyRowMapper<>(items.class));
+		return jdbc.query("SELECT * FROM items", new BeanPropertyRowMapper<>(Item.class));
 	}
 	
-	public items findById(Long id) {
+	public Item findById(Long id) {
 		// The last parameters of .query let us specify values for the (?) parameters in our SQL statement.
 		// While .query returns a list, .queryForObject assumes only one result. 
-		items match = jdbcTemplate.queryForObject("SELECT * FROM items WHERE id = ?", new BeanPropertyRowMapper<>(items.class), id);
+		Item match = jdbc.queryForObject("SELECT * FROM items WHERE id = ?", new BeanPropertyRowMapper<>(Item.class), id);
 		// If nothing matched, match will be null.
 		return match;
 	}
 	
-	public void update(items items) {
+	public void update(Item items) {
 		// Use .update for SQL INSERT, UPDATE, and DELETE
 		// All the parameters after the first specify values to fill in the ?s in the SQL.
 		String sql = "UPDATE items * SET id= ?, name=?, Description=?, Price=?";
 		jdbc.update(sql, items.getId(), items.getName(), items.getDescription(), items.getPrice());
 	}
 	
-	public void create(items items) {
+	public void create(Item items) {
 		String sql = "INSERT INTO items * SET id= ?, name=?, Description=?, Price=?";
 		jdbc.update(sql, items.getId(), items.getName(), items.getDescription(), items.getPrice());
 
@@ -51,6 +51,6 @@ public class ItemsDao {
 
 	public void delete(Long id) {
 		String sql = "DELETE FROM Room WHERE id = ?";
-		jdbcTemplate.update(sql, id);
+		jdbc.update(sql, id);
 	}
 }

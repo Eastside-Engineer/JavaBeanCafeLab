@@ -3,7 +3,7 @@ package co.grandcircus.javaBeansLab;
 import org.springframework.stereotype.Component;
 
 @Component
-public class items {
+public class Item {
 	
 	private int id;
 	private String name;
@@ -12,10 +12,10 @@ public class items {
 	private double price;
 	
 	
-	public items() {}
+	public Item() {}
 
 
-	public items(int id, String name, String description, int quantity, double price) {
+	public Item(int id, String name, String description, int quantity, double price) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -72,6 +72,13 @@ public class items {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", quantity=" + quantity
+				+ ", price=" + price + "]";
 	}
 
 

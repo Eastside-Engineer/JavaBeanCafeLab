@@ -49,7 +49,7 @@ public class CustomerDao {
 	}
 	
 	public void create(Customer customer) {
-		String sql = "INSERT INTO Room (name, capacity, available) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO Customer (firstName, lastNam`, available) VALUES (?, ?, ?)";
 		jdbcTemplate.update(sql, customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPassword(), customer.getJavaTaste(), customer.getCup());
 	}
 	

@@ -18,20 +18,20 @@ public class JavaBeansController {
 	@Autowired
 	private ItemsDao itemsDao;
 	
+//	@RequestMapping("/")
+//	public ModelAndView showIndex() {
+//		ModelAndView mav = new ModelAndView("javaBean-index");
+//		return mav;
+//	}
+//	@PostMapping("/")
+//	public ModelAndView list() {
+//		List<Customer> leListOfCustomers = customerDao.findAll();
+//		return new ModelAndView("javaBean-index", "customers", leListOfCustomers);
+//	}
 	@RequestMapping("/")
-	public ModelAndView showIndex() {
-		ModelAndView mav = new ModelAndView("javaBean-index");
-		return mav;
-	}
-	@PostMapping("/")
-	public ModelAndView list() {
-		List<Customer> leListOfCustomers = customerDao.findAll();
-		return new ModelAndView("list", "customers", leListOfCustomers);
-	}
-	@PostMapping("/")
 	public ModelAndView list1() {
-		List<items> leListOfItems = itemsDao.findAll();
-		return new ModelAndView("list", "customers", leListOfItems);
+		List<Item> leListOfItems = itemsDao.findAll();
+		return new ModelAndView("javaBean-index", "items", leListOfItems);
 	}
 	
 	@RequestMapping("/javaBean-register")
