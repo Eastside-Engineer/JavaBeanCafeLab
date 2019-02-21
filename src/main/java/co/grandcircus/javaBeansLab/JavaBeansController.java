@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import co.grandcircus.javaBeansLab.dao.CustomerDao;
+import co.grandcircus.javaBeansLab.dao.ItemsDao;
+import co.grandcircus.javaBeansLab.entity.Customer;
+import co.grandcircus.javaBeansLab.entity.Item;
+
 
 @Controller
 public class JavaBeansController {
@@ -45,6 +50,18 @@ public class JavaBeansController {
 	public ModelAndView showResult(Customer customer) {
 		ModelAndView mav = new ModelAndView("javaBean-addUser");
 
+		return mav;
+	}
+	@RequestMapping("/javaBean-admin")
+	public ModelAndView showAdmin() {
+		
+		ModelAndView mav = new ModelAndView("javaBean-admin");
+		return mav;
+	}
+	@RequestMapping("/javaBean-list-items")
+	public ModelAndView showItems() {
+		
+		ModelAndView mav = new ModelAndView("javaBean-list-itemst");
 		return mav;
 	}
 }

@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <!-- link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/sketchy/bootstrap.min.css" /> -->
 <!-- Custom CSS goes below Bootstrap CSS -->
-<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
+<!--<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">  -->
 <link rel="stylesheet" href="/style.css" />
 <title>Java Bean Cafe</title>
 </head>
@@ -18,31 +18,37 @@
 
 	<form action="/javaBean-addUser" method="post">
 		<p>
-			<label for="firstName">First Name:</label> 
-			<input type="text" id="firstName" name="firstName" />
+			<label for="firstName">First Name:</label> <input type="text"
+				id="firstName" name="firstName" />
 		</p>
 		<p>
-			<label for="lastName">Last Name:</label> 
-			<input type="text" name="lastName" id="lastname" name="lastname" />
+			<label for="lastName">Last Name:</label> <input type="text"
+				name="lastName" id="lastname" name="lastname" />
 		</p>
 		<p>
-			<label for="email">Email:</label> 
-			<input type="email" name="lastname" id="lastname" name="lastname" />
+			<label for="email">Email:</label> <input type="email" name="lastname"
+				id="lastname" name="lastname" />
 		</p>
 
 		<p>
-			<label for="password">Password:</label> 
-			<input type="password" name="password" id="password" name="password" />
+			<label for="password">Password:</label> <input type="password"
+				name="password" id="password" name="password" />
 		</p>
 		<fieldset>
-			<legend>Java Profile</legend>
-			Java Type <input type="radio" name="javaTaste" value="Light"
-				value="Medium" value="Hard">Light<br> <input
-				type="radio" name="javaTaste" value="Medium" value="Hard">
-			Medium<br> <input type="radio" name="javaTaste" value="Hard">
-			Hard <br> Did you bring your own cup? <br> <input
-				type="radio" name="cup" value="HellYeah"> HellYEAH<br> <input type="radio" name="cup"
-				value="SorryNotSorry"> SorryNotSorry<br>
+			<legend align="right">Java Profile</legend>
+			Java Roast
+			<p>
+				<input type="radio" name="javaTaste" value="Light" value="Medium"
+					value="Hard">Light<br> <input type="radio"
+					name="javaTaste" value="Medium" value="Hard"> Medium<br>
+				<input type="radio" name="javaTaste" value="Hard"> Hard <br>
+			</p>
+			Did you bring your own cup?
+			<p>
+			 <input type="radio" name="cup" value="HellYeah">
+				HellYEAH<br> <input type="radio" name="cup"
+					value="SorryNotSorry"> SorryNotSorry<br>
+			</p>
 		</fieldset>
 
 

@@ -1,14 +1,21 @@
-package co.grandcircus.javaBeansLab;
+package co.grandcircus.javaBeansLab.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
-@Component
+@Entity
+@Table(name="users")
 public class Customer {
 
 	// A simple class with getters and setters can be referred to as
 	// - a Java Bean
 	// - a POJO (plain old Java object)
 	// - a DTO (data transfer object)
-		
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 		private String firstName;
 		private String lastName;
 		private String email;
