@@ -27,13 +27,19 @@
 		</p>
 		<p>
 			<label for="email">Email:</label> <input type="email" name="lastname"
-				id="lastname" name="lastname" />
+				id="email" name="email" />
 		</p>
 
 		<p>
 			<label for="password">Password:</label> <input type="password"
 				name="password" id="password" name="password" />
 		</p>
+		
+		<p>
+			<label for="phoneNumber">Phone Number:</label> <input type="number"
+				name="phoneNumber" id="phoneNumber" name="phoneNumber" />
+		</p>
+		
 		<fieldset>
 			<legend align="right">Java Profile</legend>
 			Java Roast
@@ -41,7 +47,7 @@
 				<input type="radio" name="javaTaste" value="Light" value="Medium"
 					value="Hard">Light<br> <input type="radio"
 					name="javaTaste" value="Medium" value="Hard"> Medium<br>
-				<input type="radio" name="javaTaste" value="Hard"> Hard <br>
+				<input type="radio" name="javaTaste" value="Hard"> Dark <br>
 			</p>
 			Did you bring your own cup?
 			<p>

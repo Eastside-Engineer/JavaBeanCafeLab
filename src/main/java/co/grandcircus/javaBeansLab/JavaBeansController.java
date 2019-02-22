@@ -46,11 +46,12 @@ public class JavaBeansController {
 		return mav;
 	}
 
-	@PostMapping("/javaBean-addUser")
+	@RequestMapping("/javaBean-addUser")
 	public ModelAndView showResult(Customer customer) {
+		List<Item> leListOfItems = itemsDao.findAll();
 		ModelAndView mav = new ModelAndView("javaBean-addUser");
-
-		return mav;
+		customerDao.create(customer);
+		return new ModelAndView("javaBean-addUser", "items", leListOfItems);
 	}
 	@RequestMapping("/javaBean-admin")
 	public ModelAndView showAdmin() {

@@ -7,13 +7,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Entity
-@Table(name="items")
 public class Item {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	private String name;
 	private String description;
 	private int quantity;
@@ -23,7 +23,7 @@ public class Item {
 	public Item() {}
 
 
-	public Item(int id, String name, String description, int quantity, double price) {
+	public Item(Long id, String name, String description, int quantity, double price) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -33,12 +33,12 @@ public class Item {
 	}
 
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

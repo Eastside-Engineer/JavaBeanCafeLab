@@ -1,22 +1,15 @@
 package co.grandcircus.javaBeansLab.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
+
 import org.springframework.stereotype.Repository;
 
 import co.grandcircus.javaBeansLab.entity.Customer;
 
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
 
 // DAO stands for Data Access Object.
 // DAOs are used as a layer of code that is responsible for communicating
@@ -44,7 +37,7 @@ public class CustomerDao {
 //	}
 	public void create(Customer customer) {
 		em.persist(customer);
-				}
+	}
 	
 	public void delete(Long id) {
 		Customer sql = em.getReference(Customer.class, id);
