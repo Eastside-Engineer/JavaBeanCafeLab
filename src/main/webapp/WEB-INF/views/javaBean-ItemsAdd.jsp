@@ -5,8 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Java Bean Cafe</title>
+<link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+
+<legend align="right">Product List</legend>
 <table style="width: 100%">
 		<tr>
 			<th>Name</th>
@@ -14,19 +17,19 @@
 			<th>Quantity</th>
 			<th>Price</th>
 		</tr>
-		<c:forEach var="products" items="${ items }">
+		<c:forEach var="product" items="${ items }">
 			<tr>
-				<td align= "center">${ products.name }</td>
-				<td align="center">${ products.description }</td>
-				<td align="center">${ products.quantity }</td>
-				<td align="center">${ products.price }</td>
+				<td align= "center">${ product.name }</td>
+				<td align="center">${ product.description }</td>
+				<td align="center">${ product.quantity }</td>
+				<td align="center">${ product.price }</td>
 			</tr>
 		</c:forEach>
-	</table>
+	
 
-	<form action="/javaBean-register">
+	<form action="/list">
 		<p>
-			<button>Register</button>
+			<button>Add</button>
 		</p>
 	</form>
 </body>

@@ -40,29 +40,29 @@ public class ItemsDao {
 //		return jdbc.query("SELECT * FROM items", new BeanPropertyRowMapper<>(Item.class));
 	}
 	
-//	public Item findById(Long id) {
-//		// The last parameters of .query let us specify values for the (?) parameters in our SQL statement.
-//		// While .query returns a list, .queryForObject assumes only one result. 
-//		Item match = jdbc.queryForObject("SELECT * FROM items WHERE id = ?", new BeanPropertyRowMapper<>(Item.class), id);
-//		// If nothing matched, match will be null.
-//		return match;
-//	}
-//	
-//	public void update(Item items) {
-//		// Use .update for SQL INSERT, UPDATE, and DELETE
-//		// All the parameters after the first specify values to fill in the ?s in the SQL.
-//		String sql = "UPDATE items * SET id= ?, name=?, Description=?, Price=?";
-//		jdbc.update(sql, items.getId(), items.getName(), items.getDescription(), items.getPrice());
-//	}
-//	
-//	public void create(Item items) {
-//		String sql = "INSERT INTO items * SET id= ?, name=?, Description=?, Price=?";
-//		jdbc.update(sql, items.getId(), items.getName(), items.getDescription(), items.getPrice());
-//
-//	}
-//
-//	public void delete(Long id) {
-//		String sql = "DELETE FROM Room WHERE id = ?";
-//		jdbc.update(sql, id);
-//	}
+	public Item findById(Long id) {
+		// The last parameters of .query let us specify values for the (?) parameters in our SQL statement.
+		// While .query returns a list, .queryForObject assumes only one result. 
+		//Item match = em.find("SELECT * FROM items WHERE id = ?", new BeanPropertyRowMapper<>(Item.class), id);
+		// If nothing matched, match will be null.
+		return em.find(Item.class, id);
+	}
+	
+	public void update(Item items) {
+		// Use .update for SQL INSERT, UPDATE, and DELETE
+		// All the parameters after the first specify values to fill in the ?s in the SQL.
+		//String sql = "UPDATE items * SET id= ?, name=?, Description=?, Price=?";
+		em.merge(items);
+	}
+	
+	public void create(Item items) {
+		//String sql = "INSERT INTO items * SET id= ?, name=?, Description=?, Price=?";
+		em.persist(items);
+
+	}
+
+	public void delete(Long id) {
+		Item items = em.getReference(Item.class, id);
+		em.remove(items);
+	}
 }

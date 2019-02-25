@@ -2,19 +2,22 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 <html>
 <head>
-<!-- Custom CSS goes below Bootstrap CSS -->
 <meta charset="UTF-8">
-<title>Java Bean Cafe</title>
+<title>Java Beans Cafe</title>
+<!-- link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/sketchy/bootstrap.min.css" /> -->
+<!-- Custom CSS goes below Bootstrap CSS -->
+<!--<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">  -->
 <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-<p>Hello, ${ customer.firstName }</p>
-<p>You like your java beans with a ${ customer.javaTaste } roast! </p>
-<p>Helping the environment? ${ customer.cup }</p>
-
-<table style="width: 100%">
+	<h1>Welcome to Java Bean Cafe!</h1>
+	<h4>Register here to get EXCLUSIVE deals!.</h4>
+	<h2> Here are the products we have:</h2>
+	<table style="width: 100%">
 		<tr>
 			<th>Name</th>
 			<th>Description</th>
@@ -31,10 +34,10 @@
 		</c:forEach>
 	</table>
 
-	<!-- <form action="/addItems">
+	<form action="/register">
 		<p>
-			<button>Add</button>
+			<button>Register</button>
 		</p>
-	</form> -->
+	</form>
 </body>
 </html>
