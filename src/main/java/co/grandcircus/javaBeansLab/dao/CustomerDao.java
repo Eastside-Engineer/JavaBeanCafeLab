@@ -7,6 +7,7 @@ import co.grandcircus.javaBeansLab.entity.Customer;
 
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
@@ -43,7 +44,31 @@ public class CustomerDao {
 		Customer sql = em.getReference(Customer.class, id);
 		em.remove(sql);
 	}
+	public Customer findById(Long id) {
+		return em.find(Customer.class, id);
+	}
 	
+	public Customer findByEmail(String email) {
+		try {
+			return em.createQuery("FROM customer WHERE email = :email", Customer.class)
+					.setParameter("email", email)
+					.getSingleResult();
+		} catch (NoResultException ex) {
+			// No user with that email found.
+			return null;
+		}
+	}
+		
+		public Customer findByPassword(String password) {
+			try {
+				return em.createQuery("FROM customer WHERE password = :password", Customer.class)
+						.setParameter("password", password)
+						.getSingleResult();
+			} catch (NoResultException ex) {
+				// No user with that email found.
+				return null;
+			}
+	}
 //	public Customer findById(Long id) {
 //		// The last parameters of .query let us specify values for the (?) parameters in our SQL statement.
 //		// While .query returns a list, .queryForObject assumes only one result. 

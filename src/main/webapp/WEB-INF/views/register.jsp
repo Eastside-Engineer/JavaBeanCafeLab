@@ -8,36 +8,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Java Beans Cafe</title>
-<!-- link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/sketchy/bootstrap.min.css" /> -->
 <!-- Custom CSS goes below Bootstrap CSS -->
-<!--<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">  -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+<div class="container">
 	<h1>Welcome to Java Bean Cafe!</h1>
 	<h4>Register here to get EXCLUSIVE deals!.</h4>
 	<h2> Here are the products we have:</h2>
-	<table style="width: 100%">
-		<tr>
-			<th>Name</th>
-			<th>Description</th>
-			<th>Quantity</th>
-			<th>Price</th>
-		</tr>
-		<c:forEach var="anything" items="${ items }">
-			<tr>
-				<td align= "center">${ anything.name }</td>
-				<td align="center">${ anything.description }</td>
-				<td align="center">${ anything.quantity }</td>
-				<td align="center">${ anything.price }</td>
-			</tr>
-		</c:forEach>
-	</table>
 
 	<form action="/register">
 		<p>
 			<button>Register</button>
 		</p>
 	</form>
+	</div>
 </body>
 </html>

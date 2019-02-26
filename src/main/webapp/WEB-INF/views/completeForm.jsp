@@ -7,34 +7,16 @@
 <!-- Custom CSS goes below Bootstrap CSS -->
 <meta charset="UTF-8">
 <title>Java Bean Cafe</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
+<div class="container">
 <p>Hello, ${ customer.firstName }</p>
 <p>You like your java beans with a ${ customer.javaTaste } roast! </p>
 <p>Helping the environment? ${ customer.cup }</p>
 
-<table style="width: 100%">
-		<tr>
-			<th>Name</th>
-			<th>Description</th>
-			<th>Quantity</th>
-			<th>Price</th>
-		</tr>
-		<c:forEach var="anything" items="${ items }">
-			<tr>
-				<td align= "center">${ anything.name }</td>
-				<td align="center">${ anything.description }</td>
-				<td align="center">${ anything.quantity }</td>
-				<td align="center">${ anything.price }</td>
-			</tr>
-		</c:forEach>
-	</table>
-
-	<!-- <form action="/addItems">
-		<p>
-			<button>Add</button>
-		</p>
-	</form> -->
+<a href="/">Home</a>
+	</div>
 </body>
 </html>

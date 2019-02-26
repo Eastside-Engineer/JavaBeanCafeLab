@@ -5,19 +5,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/sketchy/bootstrap.min.css" /> -->
 <!-- Custom CSS goes below Bootstrap CSS -->
-<!--<link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">  -->
 <title>Java Bean Cafe</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 <link rel="stylesheet" href="/style.css" />
-
 </head>
 
 <body>
-
+<div class="container">
 	<h1>Please fill the Form to register!</h1>
 
-	<form action="/addUser" method="post">
+	<form action="/confirmed" method="post">
 		<p>
 			<label for="firstName">First Name:</label> <input type="text"
 				id="firstName" name="firstName" />
@@ -42,18 +40,17 @@
 		</p>
 		
 		<fieldset>
-			<legend align="right">Java Profile</legend>
+			<legend align="left">This is how you like it!</legend>
 			Java Roast
 			<p>
-				<input type="radio" name="javaTaste" value="Light" value="Medium"value="Dark">Light<br>
+				<input type="radio" name="javaTaste" value="Light" value="Medium"value="Dark"> Light<br>
 				<input type="radio" name="javaTaste" value="Medium" value="Dark"> Medium<br>
-				<input type="radio" name="javaTaste" value="Dark"> Dark <br>
+				<input type="radio" name="javaTaste" value="Dark"> Dark<br>
 			</p>
 			Did you bring your own cup?
 			<p>
-			 <input type="radio" name="cup" value="HellYeah">
-				HellYEAH<br> <input type="radio" name="cup"
-					value="SorryNotSorry"> SorryNotSorry<br>
+			 <input type="radio" name="cup" value="HellYeah"> HellYEAH<br>
+			 <input type="radio" name="cup" value="SorryNotSorry"> SorryNotSorry<br>
 			</p>
 		</fieldset>
 
@@ -62,5 +59,6 @@
 			<button>Submit</button>
 		</p>
 	</form>
+	</div>
 </body>
 </html>
